@@ -96,8 +96,37 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        #light on for sroting to say when to terminate loop
+        self.set_light_on()
+        #pick up first item
+        self.swap_item()
+
+        while self.light_is_on is True:
+            #verify if robot moves to right
+            while self.can_move_right is True:
+                #move to right
+                self.move_right()
+                if self.compare_item == 1:
+                    #if 1 then robot has larger value. Swap to get smaller value
+                    self.swap_item()
+                if self.compare_item() is None:
+                    # nothig to compare, robot at End of list so drop current value at End
+                    self.set_light_off()
+                    break
+            
+            else:
+                #no right movement move to the left
+                while self.can_move_left() is True:
+                #compare item 
+                    self.move_left()
+                    if self.compare_item is None:
+                    #if left and nothing drop,
+                    #and move to right picking up new tiem
+                        self.swap_item()
+                        self.move_right()
+                        self.swap_item()
+                        break
+
 
 
 if __name__ == "__main__":
