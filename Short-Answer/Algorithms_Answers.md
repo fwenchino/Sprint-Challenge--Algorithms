@@ -6,6 +6,7 @@ a) Its O(n) because the value of ''n'' means how many ops are done. n = operatio
 
 
 b) O(n) since n = 5 , sums to 15.
+###### this is on(log)
 
 
 c) This is too 0(n)
