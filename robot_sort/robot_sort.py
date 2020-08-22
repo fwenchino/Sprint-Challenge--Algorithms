@@ -101,12 +101,12 @@ class SortingRobot:
         #pick up first item
         self.swap_item()
 
-        while self.light_is_on is True:
+        while self.light_is_on() is True:
             #verify if robot moves to right
-            while self.can_move_right is True:
+            while self.can_move_right() is True:
                 #move to right
                 self.move_right()
-                if self.compare_item == 1:
+                if self.compare_item() == 1:
                     #if 1 then robot has larger value. Swap to get smaller value
                     self.swap_item()
                 if self.compare_item() is None:
@@ -119,7 +119,7 @@ class SortingRobot:
                 while self.can_move_left() is True:
                 #compare item 
                     self.move_left()
-                    if self.compare_item is None:
+                    if self.compare_item() is None:
                     #if left and nothing drop,
                     #and move to right picking up new tiem
                         self.swap_item()
